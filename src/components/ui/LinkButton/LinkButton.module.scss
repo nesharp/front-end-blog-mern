@@ -1,0 +1,4 @@
+.button {
+    transition: all 0.2s ease-in-out;
+    @apply border-solid border border-gray py-1 px-2 rounded-md hover:bg-gray hover:text-black;
+}

@@ -1,0 +1,10 @@
+.catalog{
+    @apply mx-2 bg-primary rounded-lg p-2 font-mono text-gray;
+
+    h3{
+        @apply text-2xl text-center mb-4;
+    }
+    .posts{
+        @apply flex flex-wrap justify-center gap-4;
+    }
+}

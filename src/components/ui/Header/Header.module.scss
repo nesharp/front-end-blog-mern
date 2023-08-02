@@ -1,0 +1,19 @@
+@import '~@/styles/vars';
+.header{
+    @apply h-20 bg-primary text-gray flex justify-between items-center px-8 border-b border-gray border-solid;
+    .logo{
+        @apply text-2xl font-bold font-mono cursor-pointer;
+        span{
+            @apply text-secondary;
+        }
+    }
+    .links{
+        @apply gap-6 flex items-center font-inter text-gray text-xl;
+    }
+    
+}
+@media screen and (max-width: 768px){
+    .profile{
+        @apply hidden;
+    }
+}

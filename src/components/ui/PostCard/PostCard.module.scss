@@ -1,0 +1,22 @@
+.card{
+    @apply p-3 bg-black shadow-2xl text-gray rounded-xl ;
+    img{
+        @apply w-56 rounded-md mb-4 h-36 shadow-2xl;
+    }
+    h3{
+        @apply text-xl w-56;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    p{
+        @apply text-sm w-56 text-left h-10 overflow-hidden font-inter;
+    
+    }
+    .bottom{
+        @apply flex justify-between items-center w-52 mt-3 mx-auto;
+        h5{
+            @apply text-green font-inter text-sm;
+        }
+    }
+}

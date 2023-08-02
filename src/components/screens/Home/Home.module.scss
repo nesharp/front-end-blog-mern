@@ -1,0 +1,29 @@
+@import '~@/styles/vars';
+.home{
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    position: relative;
+    .homeContent{
+        min-height: calc(85vh - 80px);
+        @apply flex justify-between items-center w-10/12 mx-auto pt-4;
+        img{
+            width: 800px;
+            height: 500px;
+            @apply  rounded-3xl bg-gray;
+        }
+        .info{
+            @apply align-top flex flex-col h-80 ml-10  ;
+            h2 {
+                @apply text-6xl font-mono;
+            }
+            h4 {
+
+            }
+        }
+    }
+}
+@media screen and (max-width: 1500px) {
+    .homeContent{
+        flex-direction: column;
+    }
+}

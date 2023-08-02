@@ -1,0 +1,27 @@
+.wrapper{
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    .page {
+        min-height: calc(100vh - 160px);
+        
+        @apply sm:w-2/3 xl:w-1/2 mx-auto py-10 bg-primary rounded-3xl text-gray;
+        img{
+            @apply rounded-3xl bg-gray w-10/12 mx-auto;
+        }
+        h1{
+            @apply font-mono text-4xl text-center mb-4;
+        }
+        >p{
+            @apply w-10/12 mx-auto text-center text-lg mt-4 h-20; 
+        }
+        .info{
+            @apply flex w-9/12 mx-auto items-center justify-between;
+            .views {
+                @apply flex items-center gap-1 ;
+                .viewItem{
+                    @apply w-8;
+                }
+            }
+        }
+        
+    }
+}
