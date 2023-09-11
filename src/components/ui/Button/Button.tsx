@@ -5,16 +5,22 @@ import Link from 'next/link'
 
 interface IButton {
 	onClick?: (target: EventTarget) => void
+	type?: 'button' | 'submit'
 }
 
-const Button: FC<PropsWithChildren<IButton>> = ({ children, onClick }) => {
+const Button: FC<PropsWithChildren<IButton>> = ({
+	children,
+	onClick,
+	type = 'button'
+}) => {
 	return (
 		<button
 			className={styles.button}
 			onClick={e => {
-				e.preventDefault()
+				// e.preventDefault()
 				onClick && onClick(e.currentTarget)
 			}}
+			type={type}
 		>
 			{children}
 		</button>

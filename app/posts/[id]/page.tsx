@@ -1,4 +1,5 @@
 import PostPage from '@/src/components/screens/PostPage/PostPage'
+import { Loader } from '@/src/components/ui/Loader/Loader'
 import { PostService } from '@/src/services/post/post.service'
 import { FC } from 'react'
 
@@ -9,7 +10,8 @@ interface IPostPage {
 }
 const Post: FC<IPostPage> = async ({ params }) => {
 	const post = await PostService.getPostById(params.id)
-	return <PostPage post={post} />
+
+	return post ? <PostPage post={post} /> : <Loader />
 }
 
 export default Post

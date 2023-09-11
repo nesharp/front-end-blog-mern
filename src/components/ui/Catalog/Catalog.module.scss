@@ -1,8 +1,8 @@
 .catalog{
-    @apply mx-2 bg-primary rounded-lg p-2 font-mono text-gray;
+    @apply m-1 bg-primary rounded-lg p-2 font-mono text-gray min-h-screen;
 
     h3{
-        @apply text-2xl text-center mb-4;
+        @apply text-2xl text-center mb-4 mt-3;
     }
     .posts{
         @apply flex flex-wrap justify-center gap-4;

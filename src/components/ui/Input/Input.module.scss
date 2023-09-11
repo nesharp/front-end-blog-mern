@@ -1,0 +1,6 @@
+.inputWrapper{
+    @apply flex items-center justify-center mt-3 gap-3;
+    input{
+        @apply border-2 border-gray rounded-lg px-2 py-1;
+    }
+}
