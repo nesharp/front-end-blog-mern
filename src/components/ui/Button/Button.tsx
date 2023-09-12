@@ -1,21 +1,23 @@
 'use client'
 import { FC, PropsWithChildren } from 'react'
 import styles from './Button.module.scss'
-import Link from 'next/link'
+import classNames from 'classnames'
 
 interface IButton {
 	onClick?: (target: EventTarget) => void
 	type?: 'button' | 'submit'
+	className?: string
 }
 
 const Button: FC<PropsWithChildren<IButton>> = ({
 	children,
 	onClick,
-	type = 'button'
+	type = 'button',
+	className
 }) => {
 	return (
 		<button
-			className={styles.button}
+			className={classNames(styles.button, className || null)}
 			onClick={e => {
 				// e.preventDefault()
 				onClick && onClick(e.currentTarget)

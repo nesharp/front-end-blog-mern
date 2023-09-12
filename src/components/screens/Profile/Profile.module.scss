@@ -1,3 +1,20 @@
 .wrapper{
-    @apply min-h-screen
+    // min-height:;
+    @apply min-h-[calc(100vh-168px)] bg-primary m-1 rounded-lg p-4;
+    h1{
+        @apply text-4xl text-center  font-mono text-gray;
+    }
+    p{
+        @apply text-gray;
+    }
+    .input{
+        @apply text-gray;
+    }
+    .buttonWrapper{
+        @apply flex justify-center;
+        .button {
+            @apply text-gray bg-primaryPlus text-center mt-4 px-5 hover:bg-secondary hover:text-black hover:border-none  hover:scale-110 transition-transform ;
+        }
+
+    }
 }
