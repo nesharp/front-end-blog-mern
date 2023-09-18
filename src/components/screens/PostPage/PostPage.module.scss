@@ -15,12 +15,7 @@
         }
         .info{
             @apply flex w-9/12 mx-auto items-center justify-between;
-            .views {
-                @apply flex items-center gap-1 ;
-                .viewItem{
-                    @apply w-8;
-                }
-            }
+
         }
         
     }

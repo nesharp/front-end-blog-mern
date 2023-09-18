@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import styles from './Header.module.scss'
 import Link from 'next/link'
-import LinkButton from '../LinkButton/LinkButton'
-import Auth from '@/app/auth/page'
 import { AuthItem } from '../AuthItem/AuthItem'
 interface IHeader {}
 const Header: FC<IHeader> = ({}) => {
@@ -19,9 +17,9 @@ const Header: FC<IHeader> = ({}) => {
 				<Link href={'/'}>Blog</Link>
 				<Link href={'/profile'}>Profile</Link>
 				<Link href={'/posts/my'}>My posts</Link>
+				<Link href={'/posts/add'}>Add post</Link>
 			</div>
 			<div className={styles.profile}>
-				{/* <LinkButton link='/auth'>Auth</LinkButton> */}
 				<AuthItem />
 			</div>
 		</header>

@@ -6,10 +6,10 @@ import styles from './AuthItem.module.scss'
 import Link from 'next/link'
 export const AuthItem: FC = ({}) => {
 	const user = useProfile()
-	return user ? (
+	return user?.avatarUrl ? (
 		<div className={styles.wrapper}>
 			<Link href='/profile'>
-				<img src={user.avatarUrl} alt='avatar' />
+				<img src={user.avatarUrl} alt={user.avatarUrl} />
 			</Link>
 		</div>
 	) : (

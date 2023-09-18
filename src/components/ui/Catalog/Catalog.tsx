@@ -5,12 +5,11 @@ import PostCard from '@/src/components/ui/PostCard/PostCard'
 import classNames from 'classnames'
 interface ICatalog {
 	posts: IPost[]
-	className?: string
 }
 
-const Catalog: FC<ICatalog> = ({ posts, className }) => {
+const Catalog: FC<ICatalog> = ({ posts }) => {
 	return (
-		<div className={classNames(styles.catalog, className && className)}>
+		<div className={classNames(styles.catalog)}>
 			<h3>Posts</h3>
 			<div className={styles.posts}>
 				{posts.map(post => (
