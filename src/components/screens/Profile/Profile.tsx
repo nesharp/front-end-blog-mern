@@ -23,7 +23,6 @@ export const Profile: FC = () => {
 		if (user) {
 			setFullName(user.fullName)
 			setEmail(user.email)
-			// setPassword(user.)
 			setAvatarUrl(user.avatarUrl || '')
 		}
 	}, [user])

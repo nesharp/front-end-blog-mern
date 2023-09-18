@@ -1,9 +1,8 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import styles from './Header.module.scss'
 import Link from 'next/link'
 import { AuthItem } from '../AuthItem/AuthItem'
-interface IHeader {}
-const Header: FC<IHeader> = ({}) => {
+const Header: FC = ({}) => {
 	return (
 		<header className={styles.header}>
 			<div className={styles.logo}>

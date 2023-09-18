@@ -10,3 +10,6 @@ export interface ILoginData {
 	email: string
 	password: string
 }
+export interface IUserResponse extends IUser {
+	token: string
+}

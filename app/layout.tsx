@@ -1,5 +1,6 @@
 import Footer from '@/src/components/ui/Footer/Footer'
 import Header from '@/src/components/ui/Header/Header'
+import { StoreProvider } from '@/src/redux/Provider'
 import '@/styles/globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -19,9 +20,11 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-				<Header />
-				{children}
-				<Footer />
+				<StoreProvider>
+					<Header />
+					{children}
+					<Footer />
+				</StoreProvider>
 			</body>
 		</html>
 	)

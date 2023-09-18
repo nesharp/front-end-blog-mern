@@ -1,23 +1,15 @@
 'use client'
 import { use, useEffect, useState } from 'react'
 import { userService } from '../services/user/user.service'
-import { IUser } from '../interfaces/user/user.interface'
+import { IUser, IUserResponse } from '../interfaces/user/user.interface'
+import { useSelector } from 'react-redux'
 
 export const useProfile = () => {
-	const [user, setUser] = useState<IUser | null>(null)
-	
-	useEffect(() => {
-		const token = localStorage.getItem('token')
-		userService
-			.getUser(token || '')
-			.then(res => {
-				setUser(res)
-			})
-			.catch(err => {
-				setUser(null)
-			})
-	}, [])
-	if (!user) {
+	const user = useSelector(
+		(state: { user: { user: IUserResponse } }) => state.user.user
+	)
+	console.log(user)
+	if (!user?.token) {
 		return null
 	}
 	return user
