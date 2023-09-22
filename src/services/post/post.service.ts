@@ -3,7 +3,10 @@ import { IPost, IPostCreateData } from '@/src/interfaces/post/post.interface'
 const url = process.env.NEXT_PUBLIC_SERVER_URL
 export const PostService = {
 	async getAllPosts(): Promise<IPost[]> {
-		const response = await fetch(`${url}/posts`)
+		const response = await fetch(`${url}/posts`, {
+			method: 'GET',
+			cache: 'no-cache'
+		})
 			.then(res => {
 				return res.json()
 			})
@@ -22,6 +25,7 @@ export const PostService = {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
 				Authorization: 'Bearer ' + localStorage.getItem('token')
 			},
 			body: JSON.stringify(post)

@@ -4,6 +4,7 @@ import { FormInput } from '../../ui/FormInput/FormInput'
 import Button from '../../ui/Button/Button'
 import { TextArea } from '../../ui/TextArea/TextArea'
 import { PostService } from '@/src/services/post/post.service'
+import { useRouter } from 'next/navigation'
 export const AddPostPage: FC = () => {
 	return (
 		<div className={styles.wrapper}>
@@ -30,6 +31,7 @@ export const AddPostPage: FC = () => {
 }
 // i wanna fix it
 const submitHandler = (e: any) => {
+	const router = useRouter()
 	e.preventDefault()
 	const title = e.currentTarget[0].value as string
 	const content = e.currentTarget[1].value as string
@@ -44,5 +46,6 @@ const submitHandler = (e: any) => {
 	const post = PostService.createPost(body)
 	post.then(res => {
 		console.log(res)
+		router.push('/')
 	})
 }

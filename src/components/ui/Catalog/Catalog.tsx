@@ -11,11 +11,12 @@ const Catalog: FC<ICatalog> = ({ posts }) => {
 	return (
 		<div className={classNames(styles.catalog)}>
 			<h3>Posts</h3>
-			<div className={styles.posts}>
-				{posts.map(post => (
-					<PostCard key={post._id} post={post} />
-				))}
-			</div>
+				<div className={styles.posts}>
+					{posts.map(post => (
+						<PostCard key={post._id} post={post} />
+					))}
+				</div>
+			
 		</div>
 	)
 }

@@ -4,7 +4,10 @@
     h3{
         @apply text-2xl text-center mb-4 mt-3;
     }
-    .posts{
-        @apply flex flex-wrap justify-center gap-4;
-    }
+   
+        .posts {
+        
+            @apply flex flex-wrap justify-center gap-4 w-fit items-start mx-auto;
+        }
+    
 }

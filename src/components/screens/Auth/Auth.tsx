@@ -6,12 +6,14 @@ import Button from '../../ui/Button/Button'
 import { RxAvatar } from 'react-icons/rx'
 import { userService } from '@/src/services/user/user.service'
 import { useActions } from '@/src/hooks/useAction'
+import { useRouter } from 'next/navigation'
 interface IAuth {}
 
 const AuthPage: FC<IAuth> = ({}) => {
 	const [login, setLogin] = useState('')
 	const [password, setPassword] = useState('')
 	const { setUser } = useActions()
+	const router = useRouter()
 	return (
 		<div className={styles.wrapper}>
 			<form className={styles.form} onSubmit={e => {}}>
@@ -35,6 +37,7 @@ const AuthPage: FC<IAuth> = ({}) => {
 							userService.login({ email: login, password }).then(res => {
 								console.log(res)
 								setUser(res)
+								router.back()
 							})
 						}}
 					>
