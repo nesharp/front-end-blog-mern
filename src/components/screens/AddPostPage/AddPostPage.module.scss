@@ -1,3 +1,44 @@
 .wrapper{
-    @apply bg-primary rounded-lg m-1 min-h-[calc(100vh-160px)];
+    @apply bg-primary rounded-lg m-1 min-h-[calc(100vh-160px)] py-3;
+
+    h1{
+        @apply text-2xl text-gray font-mono text-center;
+    }
+    .form{
+        .inputWrapper{
+            @apply flex flex-col;
+            .input{
+                @apply  my-1.5 mx-auto w-96 font-mono;
+            }
+            .error{
+                @apply text-red;
+            }
+            .textarea{
+                @apply w-fit mx-auto;
+                textarea{
+                    @apply w-96;
+                }
+            }
+        }
+        .button{
+            @apply mx-auto w-fit mt-2 text-gray;
+            button{
+                @apply font-mono;
+            }
+        }
+    }
+    @media screen and (max-width: 500px){
+        .form{
+            .inputWrapper{
+                .input{
+                    @apply w-60;
+                }
+                .textarea{
+                    textarea{
+                        @apply w-60;
+                    }
+                }
+            }
+        }
+    }
 }

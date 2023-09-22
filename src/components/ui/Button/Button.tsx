@@ -19,7 +19,6 @@ const Button: FC<PropsWithChildren<IButton>> = ({
 		<button
 			className={classNames(styles.button, className || null)}
 			onClick={e => {
-				// e.preventDefault()
 				onClick && onClick(e.currentTarget)
 			}}
 			type={type}

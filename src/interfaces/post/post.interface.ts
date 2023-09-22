@@ -11,3 +11,9 @@ export interface IPost {
 	createdAt: string
 	updatedAt: string
 }
+export interface IPostCreateData {
+	title: string
+	content: string
+	tags: string[]
+	imageUrl: string
+}

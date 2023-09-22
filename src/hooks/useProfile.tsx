@@ -8,7 +8,6 @@ export const useProfile = () => {
 	const user = useSelector(
 		(state: { user: { user: IUserResponse } }) => state.user.user
 	)
-	console.log(user)
 	if (!user?.token) {
 		return null
 	}
