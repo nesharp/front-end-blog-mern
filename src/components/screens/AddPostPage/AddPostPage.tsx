@@ -6,6 +6,8 @@ import { TextArea } from '../../ui/TextArea/TextArea'
 import { PostService } from '@/src/services/post/post.service'
 import { useRouter } from 'next/navigation'
 export const AddPostPage: FC = () => {
+	const router = useRouter()
+
 	return (
 		<div className={styles.wrapper}>
 			<h1>Post add</h1>
@@ -14,6 +16,7 @@ export const AddPostPage: FC = () => {
 				className={styles.form}
 				onSubmit={e => {
 					submitHandler(e)
+					router.push('/')
 				}}
 			>
 				<div className={styles.inputWrapper}>
@@ -31,7 +34,6 @@ export const AddPostPage: FC = () => {
 }
 // i wanna fix it
 const submitHandler = (e: any) => {
-	const router = useRouter()
 	e.preventDefault()
 	const title = e.currentTarget[0].value as string
 	const content = e.currentTarget[1].value as string
@@ -44,8 +46,4 @@ const submitHandler = (e: any) => {
 		imageUrl
 	}
 	const post = PostService.createPost(body)
-	post.then(res => {
-		console.log(res)
-		router.push('/')
-	})
 }

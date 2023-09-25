@@ -1,4 +1,5 @@
 import { IPost, IPostCreateData } from '@/src/interfaces/post/post.interface'
+import axios, { Axios, AxiosResponse } from 'axios'
 
 const url = process.env.NEXT_PUBLIC_SERVER_URL
 export const PostService = {
@@ -19,27 +20,28 @@ export const PostService = {
 			.catch(err => console.log('err'))
 		return response
 	},
-	async createPost(post: IPostCreateData): Promise<IPost> {
-		console.log(JSON.stringify(post))
+	async createPost(post: IPostCreateData) {
 		const response = await fetch(`${url}/posts`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
 				Authorization: 'Bearer ' + localStorage.getItem('token')
 			},
 			body: JSON.stringify(post)
 		})
 			.then(res => res.json())
+			.then(res => {
+				console.log(res)
+				return res
+			})
 			.catch(err => console.log('err'))
-		return response
 	},
 	async updatePost(post: IPost): Promise<IPost> {
 		const response = await fetch(`${url}/posts/${post._id}`, {
 			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json',
-				Auth: 'Bearer ' + localStorage.getItem('token')
+				Authorization: 'Bearer ' + localStorage.getItem('token')
 			},
 			body: JSON.stringify(post)
 		})
