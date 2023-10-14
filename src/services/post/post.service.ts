@@ -1,3 +1,4 @@
+import { useProfile } from '@/src/hooks/useProfile'
 import { IPost, IPostCreateData } from '@/src/interfaces/post/post.interface'
 import axios, { Axios, AxiosResponse } from 'axios'
 
@@ -59,6 +60,16 @@ export const PostService = {
 		})
 			.then(res => res.json())
 			.catch(err => console.log('err'))
+		return response
+	},
+	async getMyPosts(): Promise<AxiosResponse<IPost[]>> {
+		const token = useProfile()?.token
+
+		const response = await axios.get(`${url}/posts/my`, {
+			headers: {
+				Authorization: 'Bearer ' + token
+			}
+		})
 		return response
 	}
 }
