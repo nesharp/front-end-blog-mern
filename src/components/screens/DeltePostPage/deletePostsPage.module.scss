@@ -1,0 +1,12 @@
+.wrapper{
+    @apply m-1 bg-primary rounded-lg p-2 font-mono text-gray min-h-[calc(100vh-160px)];
+    h3{
+        @apply text-2xl text-center pb-4;
+    }
+    .posts{
+        @apply flex flex-wrap justify-center gap-4 w-fit items-start mx-auto;
+        .post{
+            @apply hover:bg-red hover:cursor-pointer;
+        }
+    }
+}

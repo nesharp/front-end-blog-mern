@@ -51,16 +51,13 @@ export const PostService = {
 		return response
 	},
 	async deletePost(id: string): Promise<string> {
-		const response = await fetch(`${url}/posts/${id}`, {
-			method: 'DELETE',
+		const token = localStorage.getItem('token')
+		const response = await axios.delete(`${url}/posts/${id}`, {
 			headers: {
-				'Content-Type': 'application/json',
-				Auth: 'Bearer ' + localStorage.getItem('token')
+				Authorization: 'Bearer ' + token
 			}
 		})
-			.then(res => res.json())
-			.catch(err => console.log('err'))
-		return response
+		return response.data
 	},
 	async getMyPosts(): Promise<AxiosResponse<IPost[]>> {
 		const token = useProfile()?.token

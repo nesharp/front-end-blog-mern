@@ -13,10 +13,10 @@ const Header: FC = ({}) => {
 			</div>
 			<div className={styles.links}>
 				<Link href={'/'}>Home</Link>
-				<Link href={'/'}>Blog</Link>
 				<Link href={'/profile'}>Profile</Link>
 				<Link href={'/posts/my'}>My posts</Link>
 				<Link href={'/posts/add'}>Add post</Link>
+				<Link href={'/posts/delete'}>Delete posts</Link>
 			</div>
 			<div className={styles.profile}>
 				<AuthItem />

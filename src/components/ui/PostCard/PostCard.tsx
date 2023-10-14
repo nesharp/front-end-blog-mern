@@ -4,18 +4,16 @@ import styles from './PostCard.module.scss'
 import Button from '../Button/Button'
 import Link from 'next/link'
 import LinkButton from '../LinkButton/LinkButton'
+import classNames from 'classnames'
 interface IPostCard {
 	post: IPost
+	className?: string
 }
 
-const PostCard: FC<IPostCard> = ({ post }) => {
+const PostCard: FC<IPostCard> = ({ post, className }) => {
 	return (
-		<div className={styles.card}>
-			<img
-				// src='https://images.unsplash.com/photo-1638486071992-536e48c8fa3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bG9vayUyMGJhY2t8ZW58MHx8MHx8fDA%3D&w=1000&q=80'
-				src={post.imageUrl}
-				className={styles.image}
-			/>
+		<div className={classNames(styles.card, className)}>
+			<img src={post.imageUrl} className={styles.image} />
 			<h3>{post.title}</h3>
 			<p>{post.content}</p>
 			<div className={styles.bottom}>
